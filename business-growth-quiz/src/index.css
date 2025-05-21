@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #fff;
+}
+
+
+.ticket-shape {
+  border-radius: 9999px;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.ticket-shape::before,
+.ticket-shape::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background: #f1f1f1;
+  border-radius: 50%;
+  z-index: 1;
+  transition: background-color 0.3s ease;
+}
+
+.ticket-shape::before {
+  left: -10px;
+}
+
+.ticket-shape::after {
+  right: -10px;
+}
+
+.ticket-shape:hover::before,
+.ticket-shape:hover::after {
+  background-color: #27203d;
+}
